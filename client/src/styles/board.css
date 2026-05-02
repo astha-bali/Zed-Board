@@ -1,0 +1,27 @@
+/* ========== Kanban Board ========== */
+.board-container { display:flex;flex-direction:column;height:100%;gap:var(--space-md); }
+.board-header { display:flex;align-items:center;justify-content:space-between;flex-shrink:0; }
+.board-header h1 { font-size:1.25rem;font-weight:700; }
+.board-filters { display:flex;align-items:center;gap:var(--space-sm); }
+.board-columns { display:flex;gap:var(--space-md);flex:1;overflow-x:auto;padding-bottom:var(--space-md); }
+
+.board-column { min-width:240px;width:240px;background:var(--surface-1);border:1px solid var(--border-color);border-radius:var(--radius-md);display:flex;flex-direction:column;max-height:calc(100vh - 180px);flex-shrink:0; }
+.board-column-header { display:flex;align-items:center;justify-content:space-between;padding:var(--space-md);border-bottom:1px solid var(--border-color); }
+.column-title-group { display:flex;align-items:center;gap:var(--space-sm); }
+.column-dot { width:8px;height:8px;border-radius:50%;flex-shrink:0; }
+.column-title { font-size:.8125rem;font-weight:600;text-transform:uppercase;letter-spacing:.04em; }
+.column-count { font-size:.6875rem;font-weight:600;background:var(--surface-3);color:var(--text-secondary);padding:2px 8px;border-radius:var(--radius-full); }
+.board-column-body { flex:1;overflow-y:auto;padding:var(--space-sm);min-height:100px; }
+.board-column-body.dragging-over { background:var(--accent-primary-bg); }
+
+.issue-card { background:var(--surface-2);border:1px solid var(--border-color);border-radius:var(--radius-sm);padding:var(--space-md);margin-bottom:var(--space-sm);cursor:pointer;transition:all var(--transition-fast); }
+.issue-card:hover { border-color:var(--border-color-hover);box-shadow:var(--shadow-md);transform:translateY(-1px); }
+.issue-card.dragging { box-shadow:var(--shadow-lg);transform:rotate(2deg);opacity:.9; }
+.issue-card-key { font-size:.6875rem;font-weight:600;color:var(--text-tertiary);margin-bottom:var(--space-xs); }
+.issue-card-title { font-size:.8125rem;font-weight:500;line-height:1.4;margin-bottom:var(--space-sm);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden; }
+.issue-card-footer { display:flex;align-items:center;justify-content:space-between; }
+.issue-card-meta { display:flex;align-items:center;gap:var(--space-sm); }
+.issue-type-icon,.issue-priority-icon { font-size:.75rem;line-height:1; }
+.issue-card-points { font-size:.6875rem;font-weight:600;background:var(--surface-3);color:var(--text-secondary);padding:1px 6px;border-radius:var(--radius-sm); }
+.create-issue-inline { display:flex;align-items:center;gap:var(--space-sm);padding:var(--space-sm) var(--space-md);color:var(--text-tertiary);font-size:.8125rem;cursor:pointer;border-radius:var(--radius-sm);transition:all var(--transition-fast);border:none;background:none;width:100%; }
+.create-issue-inline:hover { background:var(--bg-hover);color:var(--text-secondary); }
